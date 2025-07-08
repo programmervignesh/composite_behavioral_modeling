@@ -1,0 +1,132 @@
+{% extends 'RUser/Header.html' %}
+{% block userblock %}
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+<style>
+    body {background-color: white; color: black;}
+    .container-fluid {padding: 50px;}
+    .container {background-color: white; padding: 50px; color: black; border-radius: 10px;}
+    #title {font-family: 'Fredoka One', cursive;}
+    .text-uppercase {font-family: 'Righteous', cursive;}
+    .tweettext {
+        border: 2px solid black;
+        width: 904px;
+        height: 202px;
+        overflow: scroll;
+        background-color: white;
+        color: black;
+    }
+    .style1 {color: red; font-weight: bold;}
+    .style4 {color: black; font-weight: bold;}
+    .style6 {font-size: 24px; color: black; font-weight: bold;}
+    .table-header {
+        color: red;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    .input-field {width: 100%; padding: 5px; border-radius: 10px; border: 1px solid black;}
+    .submit-btn {
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+    .curved-title {
+        color: red;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 20px;
+        padding: 15px;
+        font-size: 20px;
+        border: 2px solid black;
+    }
+</style>
+
+<body>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form role="form" method="POST">
+                    {% csrf_token %}
+                    <fieldset>
+                        <p class="text-uppercase text-center style1">PREDICTION OF IDENTITY THEFT DETECTION</p>
+                        <hr>
+                        <div class="curved-title">ENTER DATASET DETAILS HERE</div>
+                        <table class="table" align="center">
+                            <tr>
+                                <td class="table-header">Enter Account_Id</td>
+                                <td><input type="text" name="Account_Id" class="input-field"></td>
+                                <td class="table-header">Enter Trans_Id</td>
+                                <td><input type="text" name="Trans_Id" class="input-field"></td>
+                            </tr>
+                            <tr>
+                                <td class="table-header">Enter Age</td>
+                                <td><input type="text" name="Age" class="input-field"></td>
+                                <td class="table-header">Enter Followers</td>
+                                <td><input type="text" name="Followers" class="input-field"></td>
+                            </tr>
+                            <tr>
+                                <td class="table-header">Enter NAME_CONTRACT_TYPE</td>
+                                <td><input type="text" name="NAME_CONTRACT_TYPE" class="input-field"></td>
+                                <td class="table-header">Select GENDER</td>
+                                <td>
+                                    <select name="GENDER" class="input-field">
+                                        <option>---Select---</option>
+                                        <option>M</option>
+                                        <option>F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-header">Enter AMT_INCOME_TOTAL</td>
+                                <td><input type="text" name="AMT_INCOME_TOTAL" class="input-field"></td>
+                                <td class="table-header">Enter AMT_CREDIT</td>
+                                <td><input type="text" name="AMT_CREDIT" class="input-field"></td>
+                            </tr>
+                            <tr>
+                                <td class="table-header">Enter AMT_ANNUITY</td>
+                                <td><input type="text" name="AMT_ANNUITY" class="input-field"></td>
+                                <td class="table-header">Enter AMT_GOODS_PRICE</td>
+                                <td><input type="text" name="AMT_GOODS_PRICE" class="input-field"></td>
+                            </tr>
+                            <tr>
+                                <td class="table-header">Enter NAME_INCOME_TYPE</td>
+                                <td><input type="text" name="NAME_INCOME_TYPE" class="input-field"></td>
+                                <td class="table-header">Enter NAME_FAMILY_STATUS</td>
+                                <td><input type="text" name="NAME_FAMILY_STATUS" class="input-field"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" align="center">
+                                    <input name="submit" type="submit" class="submit-btn" value="Predict">
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </form>
+
+                <form role="form" method="POST">
+                    {% csrf_token %}
+                    <fieldset>
+                        <hr>
+                        <table class="table" align="center">
+                            <tr class="table-header">
+                                <td>PREDICT IDENTITY OF THEFT DETECTION</td>
+                                <td style="color:red; font-size:20px; font-family:fantasy" align="center"><strong>{{objs}}</strong></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

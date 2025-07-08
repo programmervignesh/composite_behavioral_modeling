@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load static %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Register</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<style type="text/css">
+  .header-title {
+    font-size: 28px;
+    color: #2E8B57;
+    font-weight: bold;
+  }
+  .form-label {
+    color: #FF4500;
+    font-weight: bold;
+  }
+  .form-input {
+    border-radius: 10px;
+    border: 2px solid #4B0082;
+    padding: 5px;
+    margin-bottom: 15px;
+  }
+  .form-button {
+    background-color: #FF4500;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+  }
+  .form-button:hover {
+    background-color: #6A5ACD;
+  }
+</style>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <h1 align="center" class="header-title">Composite Behavioral Modeling for Identity Theft Detection in Online Social Networks</h1>
+    </div>
+    <div class="content">
+      <form method="POST">
+        {% csrf_token %}
+        <table align="center">
+          <tr>
+            <td class="form-label">Enter Username:</td>
+            <td><input type="text" name="username" class="form-input" placeholder="User Name" required /></td>
+          </tr>
+          <tr>
+            <td class="form-label">Enter Password:</td>
+            <td><input type="password" name="password" class="form-input" placeholder="Password" required /></td>
+          </tr>
+          <tr>
+            <td class="form-label">Enter Email:</td>
+            <td><input type="email" name="email" class="form-input" placeholder="Enter Email" required /></td>
+          </tr>
+          <tr>
+            <td class="form-label">Enter Address:</td>
+            <td><textarea name="address" class="form-input" placeholder="Enter Address"></textarea></td>
+          </tr>
+          <tr>
+            <td class="form-label">Enter Gender:</td>
+            <td>
+              <select name="gender" class="form-input">
+                <option>----Select Gender----</option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="form-label">Enter Mobile Number:</td>
+            <td><input type="number" name="phoneno" class="form-input" placeholder="Enter Mobile Number" required /></td>
+          </tr>
+          <tr>
+            <td class="form-label">Enter Country Name:</td>
+            <td><input type="text" name="country" class="form-input" placeholder="Enter Country Name" required /></td>
+          </tr>
+          <tr>
+            <td class="form-label">Enter State Name:</td>
+            <td><input type="text" name="state" class="form-input" placeholder="Enter State Name" required /></td>
+          </tr>
+          <tr>
+            <td class="form-label">Enter City Name:</td>
+            <td><input type="text" name="city" class="form-input" placeholder="Enter City Name" required /></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center"><input type="submit" class="form-button" value="Register" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
